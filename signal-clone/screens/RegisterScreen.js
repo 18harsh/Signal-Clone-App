@@ -1,8 +1,8 @@
 import React, { useLayoutEffect, useState } from 'react'
 import { StatusBar } from 'expo-status-bar'
-import { KeyboardAvoidingView } from 'react-native'
 import { StyleSheet, View } from 'react-native'
 import { Button, Input, Text } from "react-native-elements";
+import { auth } from '../firebase';
 
 const RegisterScreen = ({ navigation }) => {
     const [name, setName] = useState('');
@@ -13,17 +13,25 @@ const RegisterScreen = ({ navigation }) => {
     useLayoutEffect(() => {
         navigation.setOptions({
             headerBackTitle: "Back to Login",
+            
         });
         
     }, [navigation])
 
     const register = () => {
-        
+        auth.createUserWithEmailAndPassword(email, password)
+            .then(authUser => {
+                // console.log(authUser)
+                authUser.user.updateProfile({
+                    displayName: name,
+                    photoURL: imageUrl || "https://cencup.com/wp-content/uploads/2019/07/avatar-placeholder.png"
+            })
+        }).catch(error =>alert(error.message))
     }
 
     return (
         
-        <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <View style={styles.container}>
             <StatusBar style="light" />
             <Text h3 style={{ marginBottom: 50 }}>
                 Create a Signal account
@@ -31,7 +39,7 @@ const RegisterScreen = ({ navigation }) => {
             <View style={ styles.inputContainer}>
                 <Input
                     placeholder="Full Name"
-                    autofocus
+                    autoFocus
                     type='text'
                     value={name}
                     onChangeText={(text) => setName(text)}
@@ -65,7 +73,7 @@ const RegisterScreen = ({ navigation }) => {
                     title="Register"/>
             <View style={{ height: 100 }}/>
             
-        </KeyboardAvoidingView>
+        </View>
     )
 }
 
