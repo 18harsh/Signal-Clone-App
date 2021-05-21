@@ -5,5 +5,4 @@ built Signal clone using react-native
 <a href="https://signal-clone-c1cd1.web.app/">https://signal-clone-c1cd1.web.app/</a>
 <br>
 #Run on expo go
-<br>
 ![](https://github.com/18harsh/Signal-Clone-App/blob/main/signal-code.png)
