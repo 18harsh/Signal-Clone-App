@@ -10,3 +10,7 @@ built Signal clone using react-native
 
 
 ![](https://github.com/18harsh/Signal-Clone-App/blob/main/signal-code.png)
+
+
+# Download Apk
+<a href="https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%4018harsh/signal-clone-5a78c032dbe548ae859287f0eece2b1c-signed.apk">Download App</a>
