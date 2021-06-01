@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useState } from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, View } from 'react-native'
 import { Button, Input, Text } from "react-native-elements";
-import { auth } from '../firebase';
+import { auth } from './firebase';
 
 const RegisterScreen = ({ navigation }) => {
     const [name, setName] = useState('');

@@ -2,11 +2,12 @@
   "expo": {
     "name": "signal-clone",
     "slug": "signal-clone",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./signal-logo.png",
+    "sdkVersion": "41.0.0",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./signal-logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -20,13 +21,15 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.HarshAppDeveloper.Signal",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./signal-logo.png",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./signal-logo.png"
     }
   }
 }

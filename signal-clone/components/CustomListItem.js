@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { ListItem, Avatar} from 'react-native-elements' 
-import { db } from '../firebase';
+import { db } from '../screens/firebase';
 
 const CustomListItem = ({id,chatName, enterChat}) => {
     const [chatMessages, setChatMessages] = useState([]);
@@ -12,14 +12,14 @@ const CustomListItem = ({id,chatName, enterChat}) => {
             .doc(id)
             .collection('messages')
             .orderBy('timestamp', 'desc')
-            .onSnapshot(snapshot =>
+            .onSnapshot((snapshot) =>
                 setChatMessages(snapshot.docs.map(doc => doc.data()))
             );
         return unsubscribe;
-    })
+    },[])
 
     return (
-        <ListItem onPress={()=>enterChat(id,chatName)} key={id} bottomDivider>
+        <ListItem key={id} onPress={()=>enterChat(id,chatName)} bottomDivider>
             <Avatar
                 rounded
                 source={{

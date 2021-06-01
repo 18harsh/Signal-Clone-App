@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button, Input, Image } from "react-native-elements";
 import { StatusBar } from "expo-status-bar";
-import { auth } from '../firebase';
+import { auth } from './firebase';
 import { KeyboardAvoidingView } from 'react-native';
 const LoginScreen = ({navigation}) => {
     const [email, setEmail] = useState('');

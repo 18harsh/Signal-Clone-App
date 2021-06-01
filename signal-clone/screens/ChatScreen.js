@@ -11,7 +11,7 @@ import { ScrollView } from 'react-native'
 import { TextInput } from 'react-native'
 import { Keyboard } from 'react-native'
 import { TouchableWithoutFeedback } from 'react-native'
-import { auth, db } from '../firebase'
+import { auth, db } from './firebase'
 import firebase from 'firebase';
 
 

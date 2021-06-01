@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Button, Input } from 'react-native-elements'
 import Icon  from 'react-native-vector-icons/FontAwesome'
-import { db } from '../firebase'
+import { db } from './firebase'
 
 const AddChatScreen = ({ navigation }) => {
     

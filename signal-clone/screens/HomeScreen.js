@@ -5,7 +5,7 @@ import { TouchableOpacity } from 'react-native'
 import { StyleSheet, Text, View } from 'react-native'
 import { Avatar } from 'react-native-elements'
 import CustomListItem from '../components/CustomListItem'
-import { auth, db } from '../firebase';
+import { auth, db } from './firebase';
 import{AntDesign, SimpleLineIcons} from "@expo/vector-icons"
 
 const HomeScreen = ({ navigation }) => {
