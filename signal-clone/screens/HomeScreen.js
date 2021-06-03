@@ -6,7 +6,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Avatar } from 'react-native-elements'
 import CustomListItem from '../components/CustomListItem'
 import { auth, db } from './firebase';
-import{AntDesign, SimpleLineIcons} from "@expo/vector-icons"
+import { AntDesign, SimpleLineIcons,MaterialIcons } from "@expo/vector-icons"
 
 const HomeScreen = ({ navigation }) => {
     const [chats, setChats] = useState([]);
@@ -39,7 +39,7 @@ const HomeScreen = ({ navigation }) => {
             headerLeft: () =>(
                 <View style={{ marginLeft: 20 }}>
                     <TouchableOpacity onPress={signOutUser}>
-                        <Avatar rounded source={{uri: auth?.currentUser?.photoURL }}/>
+                        <Avatar rounded source={{uri: auth?.currentUser?.photoURL || "https://cencup.com/wp-content/uploads/2019/07/avatar-placeholder.png" }}/>
                     </TouchableOpacity>
                     
                 </View>
@@ -51,11 +51,11 @@ const HomeScreen = ({ navigation }) => {
                     width: 80,
                     marginRight: 20
                 }}>
-                    <TouchableOpacity activeOpacity={0.5}>
+                    <TouchableOpacity activeOpacity={0.5} onPress={()=>navigation.navigate("Camera")}>
                         <AntDesign name="camerao" size={24} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={()=>navigation.navigate("AddChat")} activeOpacity={0.5}>
-                        <SimpleLineIcons name="pencil" size={24} color="black"/>
+                        <MaterialIcons name="group-add" size={30} color="black"/>
                     </TouchableOpacity>
                 </View>
 
